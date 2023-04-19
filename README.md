@@ -14,6 +14,7 @@ MAIN---------------------MAINv2
 - Main Branch wird nach jedem Sprint geupdated 
 - Pushen in Develop nur mit einem Merge request
 - Jedes Feature bekommt einen eigenen Branch der wieder in Develop gemerged wird
+- Repository wird Projektarbeitstäglich gepusht und gepullt
 
 
 
