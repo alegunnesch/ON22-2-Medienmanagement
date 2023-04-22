@@ -3,7 +3,7 @@ package on22.medienprojekt;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class ImportController {
+public class StartController {
 
     @FXML
     private void switchToStart() throws IOException {

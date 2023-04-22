@@ -3,8 +3,8 @@ package on22.medienprojekt;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class ImportController {
-
+public class TaglistController {
+    
     @FXML
     private void switchToStart() throws IOException {
         App.setRoot("start");
@@ -22,3 +22,5 @@ public class ImportController {
         App.setRoot("import");
     }
 }
+
+
