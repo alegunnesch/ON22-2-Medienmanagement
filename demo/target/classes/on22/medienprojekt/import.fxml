@@ -8,35 +8,18 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="on22.medienprojekt.ImportController">
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="on22.medienprojekt.PrimaryController">
    <children>
-      <MenuBar>
-              <BottomNavigation>
-          <actionItems>
-              <BottomNavigationButton onAction="#switchToPrimary" selected="true" text="Start">
-                  <graphic>
-                      <Icon content="RECENT_ACTORS" />
-                  </graphic>
-              </BottomNavigationButton>
-              <BottomNavigationButton onAction="#switchToSecondary" text="Verwaltung">
-                  <graphic>
-                      <Icon content="FAVORITE" />
-                  </graphic>
-              </BottomNavigationButton>
-              <BottomNavigationButton onAction="#switchToTagliste" text="Tagliste">
-                  <graphic>
-                      <Icon content="NEAR_ME" />
-                  </graphic>
-              </BottomNavigationButton>
-            <BottomNavigationButton onAction="#switchToImport" selected="true" text="Import">
-               <graphic>
-                  <Icon content="RECENT_ACTORS" />
-               </graphic>
-            </BottomNavigationButton>
-          </actionItems>
-      </BottomNavigation>
-      </MenuBar>
-      <Label text="Import View" />
+      <ButtonBar buttonMinWidth="110.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToStart" text="Start" />
+            <Button fx:id="managementButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToManagement" text="Verwaltung" />
+            <Button fx:id="taglistButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToTaglist" text="Tagliste" />
+            <Button fx:id="importButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToImport" text="Import" />
+        </buttons>
+      </ButtonBar>
+      <Label text="Primary View" />
+      <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
