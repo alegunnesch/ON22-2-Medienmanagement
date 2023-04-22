@@ -11,13 +11,30 @@
 <VBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="on22.medienprojekt.PrimaryController">
    <children>
       <MenuBar>
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-        </menus>
+              <BottomNavigation>
+          <actionItems>
+              <BottomNavigationButton onAction="#switchToPrimary" selected="true" text="Start">
+                  <graphic>
+                      <Icon content="RECENT_ACTORS" />
+                  </graphic>
+              </BottomNavigationButton>
+              <BottomNavigationButton onAction="#switchToSecondary" text="Verwaltung">
+                  <graphic>
+                      <Icon content="FAVORITE" />
+                  </graphic>
+              </BottomNavigationButton>
+              <BottomNavigationButton onAction="#switchToTagliste" text="Tagliste">
+                  <graphic>
+                      <Icon content="NEAR_ME" />
+                  </graphic>
+              </BottomNavigationButton>
+            <BottomNavigationButton onAction="#switchToImport" selected="true" text="Import">
+               <graphic>
+                  <Icon content="RECENT_ACTORS" />
+               </graphic>
+            </BottomNavigationButton>
+          </actionItems>
+      </BottomNavigation>
       </MenuBar>
       <Label text="Primary View" />
       <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
