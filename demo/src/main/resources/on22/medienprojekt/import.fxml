@@ -10,10 +10,10 @@
    <children>
       <ButtonBar buttonMinWidth="110.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-          <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToStart" text="Start" />
+          <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToStart"  text="Start" />
             <Button fx:id="managementButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToManagement" text="Verwaltung" />
             <Button fx:id="taglistButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToTaglist" text="Tagliste" />
-            <Button fx:id="importButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToImport" text="Import" />
+            <Button fx:id="importButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToImport" class="active" text="Import" />
         </buttons>
       </ButtonBar>
       <Label text="Import View" />
