@@ -6,7 +6,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/4" fx:controller="on22.medienprojekt.ImportController">
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="on22.medienprojekt.ImportController">
    <children>
       <ButtonBar buttonMinWidth="110.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
