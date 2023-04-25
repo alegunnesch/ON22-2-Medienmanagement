@@ -4,6 +4,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -33,6 +36,13 @@
          <font>
             <Font size="32.0" />
          </font></Label>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="textFieldBrowse" layoutX="282.0" layoutY="75.0" prefHeight="26.0" prefWidth="374.0" />
+            <Button fx:id="browseButton" layoutX="667.0" layoutY="76.0" mnemonicParsing="false" onAction="#openBrowse" prefHeight="26.0" prefWidth="106.0" text="Browse" />
+         </children>
+      </AnchorPane>
+      <TextArea fx:id="directoryList" prefHeight="200.0" prefWidth="200.0" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
