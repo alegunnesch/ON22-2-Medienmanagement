@@ -44,7 +44,7 @@ public class ImportController {
             Stage stage = (Stage) anchorid.getScene().getWindow();
             File selectedDirectory  = dirchooser.showDialog(stage);
             if(selectedDirectory  !=null){
-                System.out.println("Path: " + selectedDirectory .getAbsolutePath());
+                System.out.println("Path: " + selectedDirectory.getAbsolutePath());
                 textFieldBrowse.setText(selectedDirectory.getAbsolutePath());
             }
     }
