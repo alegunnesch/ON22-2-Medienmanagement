@@ -48,4 +48,8 @@ public class ImportController {
                 textFieldBrowse.setText(selectedDirectory.getAbsolutePath());
             }
     }
+    @FXML
+    private void openFiles() throws IOException {
+        System.out.println("I am working.");
+    }
 }
