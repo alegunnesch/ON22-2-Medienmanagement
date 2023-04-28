@@ -2,8 +2,12 @@ package on22.medienprojekt;
 
 import java.io.File;
 import java.io.IOException;
+
+
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
@@ -37,9 +41,12 @@ public class ImportController {
         @FXML
         private TextField textFieldBrowse;
 
+        @FXML
+        private ListView<?> lvFiles;
+
     
         @FXML
-        private void openBrowse() throws IOException {
+        private void handleBrowseButton() throws IOException {
             final DirectoryChooser dirchooser = new DirectoryChooser();
             Stage stage = (Stage) anchorid.getScene().getWindow();
             File selectedDirectory  = dirchooser.showDialog(stage);
@@ -47,9 +54,5 @@ public class ImportController {
                 System.out.println("Path: " + selectedDirectory.getAbsolutePath());
                 textFieldBrowse.setText(selectedDirectory.getAbsolutePath());
             }
-    }
-    @FXML
-    private void openFiles() throws IOException {
-        System.out.println("I am working.");
     }
 }
