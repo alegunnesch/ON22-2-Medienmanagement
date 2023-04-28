@@ -9,9 +9,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.DirectoryChooser;
+//import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
+//import javafx.stage.Stage;
 
 public class ImportController {
 
@@ -49,13 +49,13 @@ public class ImportController {
     
         @FXML
         private void handleBrowseButton() throws IOException {
-            final DirectoryChooser dirchooser = new DirectoryChooser();
-            Stage stage = (Stage) anchorid.getScene().getWindow();
-            File selectedDirectory  = dirchooser.showDialog(stage);
-            if(selectedDirectory  !=null){
-                System.out.println("Path: " + selectedDirectory.getAbsolutePath());
-                textFieldBrowse.setText(selectedDirectory.getAbsolutePath());
-            }
+            //final DirectoryChooser dirchooser = new DirectoryChooser();
+            //Stage stage = (Stage) anchorid.getScene().getWindow();
+            //File selectedDirectory  = dirchooser.showDialog(stage);
+            //if(selectedDirectory  !=null){
+            //    System.out.println("Path: " + selectedDirectory.getAbsolutePath());
+            //    textFieldBrowse.setText(selectedDirectory.getAbsolutePath());
+            //}
 
 
             fc.setTitle("Wähle Dateien aus");
