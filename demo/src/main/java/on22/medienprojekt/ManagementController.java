@@ -13,25 +13,27 @@ public class ManagementController {
     private void switchToStart() throws IOException {
         App.setRoot("start");
     }
+    
     @FXML
     private void switchToManagement() throws IOException {
         App.setRoot("management");
     }
+    
     @FXML
     private void switchToTaglist() throws IOException {
         App.setRoot("taglist");
     }
+    
     @FXML
     private void switchToImport() throws IOException {
         App.setRoot("import");
     }
-
-
-
-   
     
-  
+    @FXML
+    private ListView<String> fileList;
+
+    public void setImportedFiles(ObservableList<String> files) {
+        fileList.setItems(files);
+    }
 
 }
-
-

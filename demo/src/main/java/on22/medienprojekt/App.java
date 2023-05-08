@@ -36,4 +36,18 @@ public class App extends Application {
         launch();
     }
 
+    public static <T> T getController(String fxml) {
+        FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return loader.getController();
+    }
+    
+    public static ManagementController getManagementController() {
+        return getController("management");
+    }
+
 }
