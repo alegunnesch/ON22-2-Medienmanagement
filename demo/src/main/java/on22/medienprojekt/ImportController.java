@@ -2,6 +2,7 @@ package on22.medienprojekt;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 //import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 //import javafx.stage.Stage;
+
 
 public class ImportController {
 
@@ -46,6 +48,9 @@ public class ImportController {
 
 
         final FileChooser fc = new FileChooser();
+
+        private ArrayList<File> localList = new ArrayList<File>();
+
     
         @FXML
         private void handleBrowseButton() throws IOException {
@@ -73,14 +78,22 @@ public class ImportController {
             fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("MKV","*.mkv"));
             List<File> files = fc.showOpenMultipleDialog(null);
 
+            
+
             for (int i = 0; i < files.size(); i++){
                 if (files != null) {
-                    System.out.println("test");
+                    System.out.println("test"); //only to test
                     lvFiles.getItems().add(files.get(i));
+                    localList.add(files.get(i));
                 }
                 //textFieldBrowse.appendText(files.get(i).getAbsolutePath()+ "\n");
             }
-           
-
+            System.out.print(localList); //only to test
     }
-}
+
+@FXML
+        private void saveListAction() throws IOException {
+            System.out.print("ello"); //only to test
+            lvFiles.getItems();
+        }
+    }

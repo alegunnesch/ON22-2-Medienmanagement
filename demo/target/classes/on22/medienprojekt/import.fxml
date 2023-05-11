@@ -36,11 +36,12 @@
          <font>
             <Font size="32.0" />
          </font></Label>
-      <AnchorPane prefHeight="127.0" prefWidth="1240.0" fx:id="anchorid">
+      <AnchorPane prefHeight="127.0" prefWidth="1240.0">
          <children>
-            <TextField fx:id="textFieldBrowse" alignment="TOP_CENTER" layoutX="280.0" layoutY="7.0" prefHeight="26.0" prefWidth="375.0" />
-            <Button fx:id="browseButton" layoutX="661.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleBrowseButton" prefHeight="26.0" prefWidth="106.0" text="Browse" />
+            <TextField fx:id="textFieldBrowse" alignment="TOP_CENTER" layoutX="280.0" layoutY="7.0" prefHeight="26.0" prefWidth="259.0" />
+            <Button fx:id="browseButton" layoutX="546.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleBrowseButton" prefHeight="26.0" prefWidth="106.0" text="Browse" />
             <ListView fx:id="lvFiles" layoutX="280.0" layoutY="40.0" prefHeight="78.0" prefWidth="488.0" />
+            <Button fx:id="saveListBtn" layoutX="661.0" layoutY="7.0" mnemonicParsing="false" onAction="#saveListAction" prefHeight="26.0" prefWidth="106.0" text="Save list" />
          </children>
       </AnchorPane>
    </children>
