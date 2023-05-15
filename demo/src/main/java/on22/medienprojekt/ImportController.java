@@ -95,22 +95,24 @@ public class ImportController {
 
 
 
-try (FileOutputStream fos = new FileOutputStream("lvFiles");
-    ObjectOutputStream oos = new ObjectOutputStream(fos);) {
-
-  oos.writeObject(localList);
-
-} catch (FileNotFoundException e) {
-  System.out.print("File not found");
-  throw new RuntimeException(e);
-} catch (IOException e) {
-    System.out.print("Error while writing data");
-  throw new RuntimeException(e);
-}
-System.out.print("aaaaaaaaaaaaaaaaaaaaaaa");
-System.out.print(localList);
-    }
-
+            List<String> fileNames = new ArrayList<>();
+            for (File file : localList) {
+                fileNames.add(file.getName());
+            }
+            
+            try (FileOutputStream fos = new FileOutputStream("lvFiles");
+                 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            
+                oos.writeObject(fileNames);
+            
+            } catch (FileNotFoundException e) {
+                System.out.print("File not found");
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                System.out.print("Error while writing data");
+                throw new RuntimeException(e);
+            }
+        }
     
 
 @FXML
