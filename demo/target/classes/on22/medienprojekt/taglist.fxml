@@ -62,6 +62,9 @@
          <right>
                 <Button onAction="#removeItem" text="Entfernen" BorderPane.alignment="CENTER" />
          </right>
+         <bottom>
+                <Button fx:id="saveTagListBtn" onAction="#addToFile" prefHeight="26.0" text="Tag list to file" BorderPane.alignment="CENTER" />
+         </bottom>
         </BorderPane>
     </children>
     <padding>
