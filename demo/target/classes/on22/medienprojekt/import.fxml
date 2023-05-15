@@ -23,7 +23,7 @@
                   <Font size="32.0" />
                </font></Button>
             <Button id="taglistButton" fx:id="taglistButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToTaglist" text="Tagliste" translateX="-200.0">
-               <font>
+               <font> 
                   <Font size="32.0" />
                </font></Button>
             <Button id="importButton" fx:id="importButton" alignment="TOP_CENTER" defaultButton="true" mnemonicParsing="false" onAction="#switchToImport" text="Import" translateX="-200.0">
