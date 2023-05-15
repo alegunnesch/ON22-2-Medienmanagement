@@ -6,66 +6,79 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="on22.medienprojekt.TaglistController">
+<VBox alignment="CENTER" prefHeight="689.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="on22.medienprojekt.TaglistController">
     <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <BorderPane prefHeight="745.0" prefWidth="1240.0">
          <top>
-              <ButtonBar buttonMinWidth="110.0" prefHeight="68.0" prefWidth="1219.0" BorderPane.alignment="CENTER">
+               <ButtonBar buttonMinWidth="110.0" prefHeight="68.0" prefWidth="1219.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
                   <buttons>
-                      <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToStart" text="Start" translateX="-200.0">
+                      <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToStart" style="-fx-background-color: #ffffff;" text="Start" textFill="#a06d17" translateX="-200.0">
                           <font>
-                              <Font size="32.0" />
+                              <Font name="Arial" size="32.0" />
                           </font>
                       </Button>
-                      <Button fx:id="managementButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToManagement" text="Verwaltung" translateX="-200.0">
+                      <Button fx:id="managementButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToManagement" style="-fx-background-color: #ffffff;" text="Verwaltung" textFill="#a06d17" translateX="-200.0">
                           <font>
-                              <Font size="32.0" />
+                              <Font name="Arial" size="32.0" />
                           </font>
                       </Button>
-                      <Button fx:id="taglistButton" alignment="TOP_CENTER" defaultButton="true" mnemonicParsing="false" onAction="#switchToTaglist" text="Tagliste" translateX="-200.0">
+                      <Button fx:id="taglistButton" alignment="TOP_CENTER" defaultButton="true" mnemonicParsing="false" onAction="#switchToTaglist" style="-fx-background-color: #ffffff;" text="Tagliste" textFill="#a06d17" translateX="-200.0">
                           <font>
-                              <Font size="32.0" />
+                              <Font name="Arial Bold" size="32.0" />
                           </font>
                       </Button>
-                      <Button fx:id="importButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToImport" text="Import" translateX="-200.0">
+                      <Button fx:id="importButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToImport" style="-fx-background-color: #ffffff;" text="Import" textFill="#a06d17" translateX="-200.0">
                           <font>
-                              <Font size="32.0" />
+                              <Font name="Arial" size="32.0" />
                           </font>
                       </Button>
                   </buttons>
               </ButtonBar>
          </top>
+         <bottom>
+            <VBox prefHeight="429.0" prefWidth="1240.0" BorderPane.alignment="CENTER">
+               <children>
+                      <ListView fx:id="listView" prefHeight="402.0" prefWidth="1240.0" />
+                  <AnchorPane prefHeight="79.0" prefWidth="1240.0">
+                     <children>
+                            <Button layoutX="226.0" layoutY="15.0" onAction="#addItem" style="-fx-background-color: #e3e0d6; -fx-border-radius: 5px; -fx-border-color: #707070; -fx-background-radius: 7px;" text="Hinzufügen" textFill="#707070">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Button>
+                            <Button layoutX="332.0" layoutY="15.0" onAction="#removeItem" style="-fx-background-color: #e3e0d6; -fx-background-radius: 7px; -fx-border-color: #707070; -fx-border-radius: 5px;" text="Entfernen" textFill="#707070">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Button>
+                            <Button fx:id="saveTagListBtn" layoutX="425.0" layoutY="14.0" onAction="#addToFile" prefHeight="26.0" style="-fx-background-color: #e3e0d6; -fx-background-radius: 7px; -fx-border-color: #707070; -fx-border-radius: 5px;" text="Tag list to file" textFill="#707070">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Button>
+                            <TextField fx:id="tagTextField" layoutY="15.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #707070; -fx-border-radius: 5px;" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </bottom>
          <center>
-              <Label text="Tagliste View" BorderPane.alignment="CENTER">
-                  <font>
-                      <Font size="32.0" />
-                  </font>
-              </Label>
+            <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="117.0" prefWidth="1240.0" style="-fx-background-color: #e3e0d6; -fx-border-color: #707070;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="TOP_LEFT" layoutX="501.0" layoutY="51.0" style="-fx-border-color: #707070; -fx-padding: 10px; -fx-border-radius: 5px;" text="Meine Tagliste" textFill="#707070">
+                     <font>
+                        <Font name="Times New Roman" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </center>
       </BorderPane>
-        <BorderPane prefHeight="200.0" prefWidth="200.0">
-            <center>
-                <ListView fx:id="listView" prefHeight="200.0" prefWidth="594.0" BorderPane.alignment="CENTER" />
-            </center>
-        </BorderPane>
-        <BorderPane prefHeight="200.0" prefWidth="200.0">
-            <left>
-                <TextField fx:id="tagTextField" prefWidth="200.0" />
-            </left>
-            <center>
-                <Button onAction="#addItem" text="Hinzufügen" />
-            </center>
-         <right>
-                <Button onAction="#removeItem" text="Entfernen" BorderPane.alignment="CENTER" />
-         </right>
-         <bottom>
-                <Button fx:id="saveTagListBtn" onAction="#addToFile" prefHeight="26.0" text="Tag list to file" BorderPane.alignment="CENTER" />
-         </bottom>
-        </BorderPane>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

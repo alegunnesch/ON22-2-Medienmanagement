@@ -41,7 +41,7 @@
             </ButtonBar>
          </top>
          <bottom>
-            <AnchorPane prefHeight="434.0" prefWidth="1240.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="469.0" prefWidth="1240.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
                <children>
                   <TextField fx:id="textFieldBrowse" alignment="TOP_CENTER" layoutX="371.0" layoutY="32.0" prefHeight="26.0" prefWidth="259.0" style="-fx-background-color: #ffffff; -fx-border-color: #707070; -fx-border-radius: 4px;" />
                   <Button fx:id="browseButton" layoutX="638.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleBrowseButton" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #e3e0d6; -fx-border-color: #707070; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Browse" textFill="#707070">
@@ -59,9 +59,9 @@
             </AnchorPane>
          </bottom>
          <center>
-            <AnchorPane prefHeight="300.0" prefWidth="1240.0" style="-fx-background-color: e3e0d6;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="161.0" prefWidth="1240.0" style="-fx-background-color: e3e0d6; -fx-border-color: #707070;" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="508.0" layoutY="68.0" style="-fx-border-color: #707070; -fx-padding: 10px; -fx-border-radius: 5px;" text="Mein Importbereich" textFill="#707070">
+                  <Label layoutX="508.0" layoutY="50.0" style="-fx-border-color: #707070; -fx-padding: 10px; -fx-border-radius: 5px;" text="Mein Importbereich" textFill="#707070">
                      <font>
                         <Font name="Times New Roman" size="25.0" />
                      </font>
