@@ -41,9 +41,9 @@
          <center>
             <AnchorPane prefHeight="113.0" prefWidth="1240.0" style="-fx-background-color: #e3e0d6; -fx-border-color: #707070;" BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="TOP_LEFT" layoutX="462.0" layoutY="45.0" style="-fx-border-color: #707070; -fx-padding: 5px; -fx-border-radius: 5px;" text="Herzlich Willkommen" textFill="#707070">
+                  <Label alignment="TOP_LEFT" layoutX="501.0" layoutY="43.0" style="-fx-border-color: #707070; -fx-padding: 10px; -fx-border-radius: 5px;" text="Herzlich Willkommen" textFill="#707070">
                      <font>
-                        <Font name="Times New Roman" size="32.0" />
+                        <Font name="Times New Roman" size="24.0" />
                      </font>
                   </Label>
                </children>
