@@ -37,7 +37,8 @@ public class TaglistController {
 
         listView.setItems(data);
         listView.setCellFactory(ComboBoxListCell.forListView(names));
-    }
+    } 
+    
 
     @FXML
     private void switchToStart() throws IOException {
