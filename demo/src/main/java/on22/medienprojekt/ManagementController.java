@@ -13,6 +13,11 @@ import javafx.collections.ObservableList;
 
 import javafx.scene.control.ListView;
 
+//auslesen der .daf
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class ManagementController implements Initializable {
 
     @FXML
@@ -78,4 +83,25 @@ public class ManagementController implements Initializable {
             System.out.println(selectedItem.getValue());
         }
      }
+
+     //auslesen der .daf
+
+ 
+    public static class ReadDafFile {
+         public static void main(String[] args) {
+        String filePath = "C:\\Users\\WN00812443\\Desktop\\ProjektLastTry\\ON22-2-Medienmanagement\\IvFiles";
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filePath));
+            String line = reader.readLine();
+            while (line != null) {
+                System.out.println(line);
+                line = reader.readLine();
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    }
+
     }     
