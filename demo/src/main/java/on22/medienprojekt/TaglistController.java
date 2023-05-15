@@ -100,22 +100,3 @@ public class TaglistController {
     
 }
     
-
-/* @FXML
-private void saveListAction() throws IOException{
-ObservableList<String> serializableData = FXCollections.observableArrayList(data);
-
-try (FileOutputStream fos = new FileOutputStream("tagfiles");
-     ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-
-    oos.writeObject(serializableData);
-
-} catch (IOException e) {
-    System.out.print("Error while writing data");
-    throw new RuntimeException(e);
-}
-
-System.out.print("Saved data successfully.");
-}
-
- */
