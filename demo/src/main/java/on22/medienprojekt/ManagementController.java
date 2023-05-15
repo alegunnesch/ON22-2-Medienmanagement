@@ -13,6 +13,12 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.ComboBoxListCell;
 
+import java.io.Console;
+import java.io.FileInputStream;
+
+import java.io.ObjectInputStream;
+import java.util.List;
+
 public class ManagementController implements Initializable {
 
     @FXML
@@ -86,5 +92,21 @@ public class ManagementController implements Initializable {
             System.out.println(selectedItem.getValue());
         }
     }
+
+    @FXML
+public void extractNamesFromTagFile() {
+    try (FileInputStream fis = new FileInputStream("lvFiles");
+     ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+        List<String> fileNames = (List<String>) ois.readObject();
+
+        data = FXCollections.observableArrayList(fileNames);
+        lvImportedFiles.setItems(data);
+} catch (IOException | ClassNotFoundException e) {
+    System.out.println("Error while reading data from lvFiles: " + e.getMessage());
+    e.printStackTrace();
+}
+
+}
 }
 
