@@ -54,6 +54,7 @@ public class TaglistController {
     private void switchToImport() throws IOException {
         App.setRoot("import");
     }
+    
 
     @FXML
     public void addItem() {
