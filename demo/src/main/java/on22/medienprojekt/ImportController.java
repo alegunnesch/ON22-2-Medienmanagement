@@ -1,7 +1,10 @@
 package on22.medienprojekt;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,11 +92,31 @@ public class ImportController {
                 //textFieldBrowse.appendText(files.get(i).getAbsolutePath()+ "\n");
             }
             System.out.print(localList); //only to test
+
+
+
+try (FileOutputStream fos = new FileOutputStream("lvFiles");
+    ObjectOutputStream oos = new ObjectOutputStream(fos);) {
+
+  oos.writeObject(localList);
+
+} catch (FileNotFoundException e) {
+  System.out.print("File not found");
+  throw new RuntimeException(e);
+} catch (IOException e) {
+    System.out.print("Error while writing data");
+  throw new RuntimeException(e);
+}
+System.out.print("aaaaaaaaaaaaaaaaaaaaaaa");
+System.out.print(localList);
     }
+
+    
 
 @FXML
         private void saveListAction() throws IOException {
             System.out.print("ello"); //only to test
             lvFiles.getItems();
         }
+        
     }
