@@ -95,7 +95,7 @@ public class ImportController {
 
 
 
-try (FileOutputStream fos = new FileOutputStream("lvFiles");
+try (FileOutputStream fos = new FileOutputStream("lvFiles.txt");
     ObjectOutputStream oos = new ObjectOutputStream(fos);) {
 
   oos.writeObject(localList);
