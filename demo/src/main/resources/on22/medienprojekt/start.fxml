@@ -4,35 +4,61 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="on22.medienprojekt.StartController">
    <children>
-      <ButtonBar buttonMinWidth="110.0" prefHeight="40.0" prefWidth="200.0" translateY="-220.0">
-        <buttons>
-          <Button fx:id="startButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#switchToStart" text="Start" translateX="-200.0">
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <ButtonBar buttonMinWidth="110.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #ffffffff;" BorderPane.alignment="CENTER">
+              <buttons>
+                <Button fx:id="startButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#switchToStart" style="-fx-background-color: #ffffff;" text="Start" textFill="#a06d17" translateX="-200.0">
+                     <font>
+                        <Font name="Arial Bold" size="32.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="managementButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToManagement" style="-fx-background-color: #ffffff;" text="Verwaltung" textFill="#a06d17" translateX="-200.0">
+                     <font>
+                        <Font name="Arial" size="32.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="taglistButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToTaglist" style="-fx-background-color: #ffffff;" text="Tagliste" textFill="#a06d17" translateX="-200.0">
+                     <font>
+                        <Font name="Arial" size="32.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="importButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToImport" style="-fx-background-color: #ffffff;" text="Import" textFill="#a06d17" translateX="-200.0">
+                     <font>
+                        <Font name="Arial" size="32.0" />
+                     </font>
+                  </Button>
+              </buttons>
+            </ButtonBar>
+         </top>
+         <center>
+            <AnchorPane prefHeight="113.0" prefWidth="1240.0" style="-fx-background-color: #e3e0d6; -fx-border-color: #707070;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="TOP_LEFT" layoutX="501.0" layoutY="43.0" style="-fx-border-color: #707070; -fx-padding: 10px; -fx-border-radius: 5px;" text="Herzlich Willkommen" textFill="#707070">
+                     <font>
+                        <Font name="Times New Roman" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <AnchorPane prefHeight="469.0" prefWidth="1240.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label alignment="TOP_LEFT" layoutX="534.0" layoutY="207.0" style="-fx-border-color: #a06d17; -fx-padding: 5px; -fx-border-radius: 5px;" text="My-Records" textFill="#a06d17">
                <font>
-                  <Font size="32.0" />
-               </font></Button>
-            <Button fx:id="managementButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToManagement" text="Verwaltung" translateX="-200.0">
-               <font>
-                  <Font size="32.0" />
-               </font></Button>
-            <Button fx:id="taglistButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToTaglist" text="Tagliste" translateX="-200.0">
-               <font>
-                  <Font size="32.0" />
-               </font></Button>
-            <Button fx:id="importButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToImport" text="Import" translateX="-200.0">
-               <font>
-                  <Font size="32.0" />
-               </font></Button>
-        </buttons>
-      </ButtonBar>
-      <Label text="Primary View">
-         <font>
-            <Font size="32.0" />
-         </font></Label>
+                  <Font name="Times New Roman" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
