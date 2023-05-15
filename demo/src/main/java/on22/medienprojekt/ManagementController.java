@@ -1,22 +1,25 @@
 package on22.medienprojekt;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.ListView;
 import javafx.scene.control.cell.ComboBoxListCell;
 
 import java.io.Console;
 import java.io.FileInputStream;
-
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ManagementController implements Initializable {
@@ -52,7 +55,7 @@ public class ManagementController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         dateien = FXCollections.observableArrayList(
-                "Datei1", "Datei2", "Datei3", "Datei4"
+                "Word1", "Word2"
         );
 
         data = FXCollections.observableArrayList();
@@ -61,7 +64,32 @@ public class ManagementController implements Initializable {
         }
 
         lvImportedFiles.setItems(data);
-        lvImportedFiles.setCellFactory(ComboBoxListCell.forListView(dateien));
+        lvImportedFiles.setCellFactory(listView -> new ListCell<String>() {
+            private final ComboBox<String> wordComboBox = new ComboBox<>();
+
+            {
+                wordComboBox.getItems().addAll(dateien);
+                wordComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+                    if (newValue != null) {
+                        setText(newValue);
+                    }
+                });
+            }
+
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                    setGraphic(null);
+                } else {
+                    setText(item);
+                    wordComboBox.setValue(item);
+                    setGraphic(wordComboBox);
+                }
+            }
+        });
 
         TreeItem<String> rootItem = new TreeItem<>("Root");
 
@@ -94,19 +122,35 @@ public class ManagementController implements Initializable {
     }
 
     @FXML
-public void extractNamesFromTagFile() {
-    try (FileInputStream fis = new FileInputStream("lvFiles");
-     ObjectInputStream ois = new ObjectInputStream(fis)) {
+    public void extractNamesFromTagFile() {
+        try (FileInputStream fis = new FileInputStream("lvFiles");
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
 
-        List<String> fileNames = (List<String>) ois.readObject();
+            List<String> fileNames = (List<String>) ois.readObject();
 
-        data = FXCollections.observableArrayList(fileNames);
-        lvImportedFiles.setItems(data);
-} catch (IOException | ClassNotFoundException e) {
-    System.out.println("Error while reading data from lvFiles: " + e.getMessage());
-    e.printStackTrace();
+            data = FXCollections.observableArrayList(fileNames);
+            lvImportedFiles.setItems(data);
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error while reading data from lvFiles: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void saveTagsToFile() {
+        List<String> tags = new ArrayList<>();
+        for (String item : lvImportedFiles.getItems()) {
+            tags.add(item);
+        }
+
+        try (FileOutputStream fos = new FileOutputStream("lvFiles");
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+
+            oos.writeObject(tags);
+            System.out.println("Tags saved successfully.");
+        } catch (IOException e) {
+            System.out.println("Error while saving tags: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 }
-
-}
-}
-
