@@ -66,30 +66,32 @@ public class ManagementController implements Initializable {
         lvImportedFiles.setItems(data);
         lvImportedFiles.setCellFactory(listView -> new ListCell<String>() {
             private final ComboBox<String> wordComboBox = new ComboBox<>();
-
+            private List<String> chosenWords = new ArrayList<>(data); // Initialize chosenWords with the original data
+            
             {
                 wordComboBox.getItems().addAll(dateien);
                 wordComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
                     if (newValue != null) {
-                        setText(newValue);
+                        chosenWords.set(getIndex(), newValue);
                     }
                 });
             }
-
+        
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
-
+        
                 if (empty || item == null) {
                     setText(null);
                     setGraphic(null);
                 } else {
                     setText(item);
-                    wordComboBox.setValue(item);
                     setGraphic(wordComboBox);
+                    wordComboBox.getSelectionModel().select(item);
                 }
             }
         });
+        
 
         TreeItem<String> rootItem = new TreeItem<>("Root");
 
