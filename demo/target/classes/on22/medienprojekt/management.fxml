@@ -64,6 +64,7 @@
          </center>
       </BorderPane>
       <Button mnemonicParsing="false" text="Button" onAction="#extractNamesFromTagFile" />
+       <Button mnemonicParsing="false" text="Export Files" onAction="#exportFiles" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

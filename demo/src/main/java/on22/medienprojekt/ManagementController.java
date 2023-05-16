@@ -1,4 +1,5 @@
 package on22.medienprojekt;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -6,6 +7,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -61,12 +63,14 @@ public class ManagementController implements Initializable {
     private void switchToImport() throws IOException {
         App.setRoot("import");
     }
+    @FXML private Button exportButton;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         dateien = FXCollections.observableArrayList(
-                "Word1", "Word2"
-        );
+                "Word1", "Word2");
+                exportButton.setOnAction(event -> exportFiles());
+        
 
         data = FXCollections.observableArrayList();
         for (int i = 0; i < 4; i++) {
@@ -166,22 +170,26 @@ public class ManagementController implements Initializable {
 
 
     //test für den file export
-    public class FileExporter {
+    
 
-        public void exportFiles(ListView<String> listView, String exportPath) {
-            ObservableList<String> files = listView.getItems();
-            
-            try (FileWriter writer = new FileWriter(exportPath)) {
-                for (String file : files) {
-                    writer.write(file + System.lineSeparator());
+        public class FileExporter {
+
+            public void exportFiles(ListView<String> listView, String exportPath) {
+                ObservableList<String> files = listView.getItems();
+        
+                try (FileWriter writer = new FileWriter(exportPath)) {
+                    for (String file : files) {
+                        writer.write(file + System.lineSeparator());
+                    }
+        
+                    System.out.println("Dateien erfolgreich exportiert.");
+                } catch (IOException e) {
+                    System.err.println("Fehler beim Exportieren der Dateien: " + e.getMessage());
                 }
-                
-                System.out.println("Dateien erfolgreich exportiert.");
-            } catch (IOException e) {
-                System.err.println("Fehler beim Exportieren der Dateien: " + e.getMessage());
             }
         }
-    }
+ 
+
 
     @FXML
 private void exportFiles() {
@@ -200,4 +208,6 @@ private void exportFiles() {
 
 
 
-}
+
+} 
+
