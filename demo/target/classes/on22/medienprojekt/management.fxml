@@ -13,57 +13,58 @@
 
 <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="on22.medienprojekt.ManagementController">
    <children>
-      <BorderPane prefHeight="485.0" prefWidth="1242.0">
-         <left>
-            <AnchorPane fx:id="Anchor" prefHeight="430.0" prefWidth="194.0" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="735.0" prefWidth="1240.0">
+         <center>
+            <AnchorPane prefHeight="147.0" prefWidth="1240.0" style="-fx-background-color: #e3e0d6; -fx-border-color: #707070;" BorderPane.alignment="CENTER">
                <children>
-                  <TreeView fx:id="treeView" layoutY="-4.0" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="434.0" prefWidth="200.0" />
+                  <Label layoutX="478.0" layoutY="60.0" style="-fx-border-color: #707070; -fx-padding: 10px; -fx-border-radius: 5px;" text="Mein Verwaltungsbereich" textFill="#707070">
+                     <font>
+                        <Font name="Times New Roman" size="25.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
-         </left>
+         </center>
          <top>
-          <ButtonBar buttonMinWidth="110.0" prefHeight="62.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
+          <ButtonBar buttonMinWidth="110.0" prefHeight="62.0" prefWidth="1242.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
               <buttons>
-                <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToStart" text="Start" translateX="-200.0">
+                <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToStart" style="-fx-background-color: #ffffff;" text="Start" textFill="#a06d17" translateX="-200.0">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Arial" size="32.0" />
                      </font>
                   </Button>
-                  <Button fx:id="managementButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#switchToManagement" text="Verwaltung" translateX="-200.0">
+                  <Button fx:id="managementButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#switchToManagement" style="-fx-background-color: #ffffff;" text="Verwaltung" textFill="#a06d17" translateX="-200.0">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Arial Bold" size="32.0" />
                      </font>
                   </Button>
-                  <Button fx:id="taglistButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToTaglist" text="Tagliste" translateX="-200.0">
+                  <Button fx:id="taglistButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToTaglist" style="-fx-background-color: #ffffff;" text="Tagliste" textFill="#a06d17" translateX="-200.0">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Arial" size="32.0" />
                      </font>
                   </Button>
-                  <Button fx:id="importButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToImport" text="Import" translateX="-200.0">
+                  <Button fx:id="importButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#switchToImport" style="-fx-background-color: #ffffff;" text="Import" textFill="#a06d17" translateX="-200.0">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Arial" size="32.0" />
                      </font>
                   </Button>
               </buttons>
             </ButtonBar>
          </top>
          <bottom>
-            
-                  <Label text="Secondary View" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="32.0" />
-               </font>
-            </Label>
-         </bottom>
-         <center>
-            <AnchorPane prefHeight="430.0" prefWidth="57.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="430.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
                <children>
-                  <ListView fx:id="lvImportedFiles" prefHeight="353.0" prefWidth="1040.0" />
+                  <TreeView fx:id="treeView" layoutY="9.0" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="426.0" prefWidth="184.0" style="-fx-background-color: #ffffff; -fx-border-color: #707070; -fx-border-radius: 5px;" />
+                  <AnchorPane layoutY="14.0" prefHeight="430.0" prefWidth="1240.0">
+                     <children>
+                        <ListView fx:id="lvImportedFiles" layoutX="192.0" layoutY="-5.0" prefHeight="359.0" prefWidth="1047.0" style="-fx-background-color: #ffffff; -fx-border-color: #707070; -fx-border-radius: 5px;" />
+                        <Button layoutX="594.0" layoutY="390.0" mnemonicParsing="false" onAction="#extractNamesFromTagFile" style="-fx-background-color: #e3e0d6; -fx-background-radius: 7px; -fx-border-color: #707070; -fx-border-radius: 5px;" text="Button" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
-         </center>
+         </bottom>
       </BorderPane>
-      <Button mnemonicParsing="false" text="Button" onAction="#extractNamesFromTagFile" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
