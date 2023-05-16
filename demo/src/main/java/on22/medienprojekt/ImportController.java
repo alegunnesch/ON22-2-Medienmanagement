@@ -94,33 +94,25 @@ public class ImportController {
             System.out.print(localList); //only to test
 
 
-            List<String> tags;
-            tags = new ArrayList<>();
-            tags.add(textFieldBrowse.getText());
-try (FileOutputStream fos = new FileOutputStream("lvFiles.dat");
-    ObjectOutputStream oos = new ObjectOutputStream(fos);) {
-        for (int i = 0; i < localList.size(); i++){
-            oos.writeObject(localList);
-            oos.writeObject(tags);
+
+            List<String> fileNames = new ArrayList<>();
+            for (File file : localList) {
+                fileNames.add(file.getName());
+            }
+            
+            try (FileOutputStream fos = new FileOutputStream("lvFiles");
+                 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            
+                oos.writeObject(fileNames);
+            
+            } catch (FileNotFoundException e) {
+                System.out.print("File not found");
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                System.out.print("Error while writing data");
+                throw new RuntimeException(e);
+            }
         }
-
-
-} catch (FileNotFoundException e) {
-  System.out.print("File not found");
-  throw new RuntimeException(e);
-} catch (IOException e) {
-    System.out.print("Error while writing data");
-  throw new RuntimeException(e);
-}
-
-
-System.out.print("aaaaaaaaaaaaaaaaaaaaaaa");
-for (int i = 0; i < localList.size(); i++){
-    
-System.out.print(localList);
-System.out.print(tags);}
-    }
-
     
 
 @FXML
