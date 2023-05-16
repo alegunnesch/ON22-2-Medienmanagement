@@ -70,7 +70,7 @@
          <center>
             <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="117.0" prefWidth="1240.0" style="-fx-background-color: #e3e0d6; -fx-border-color: #707070;" BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="TOP_LEFT" layoutX="501.0" layoutY="51.0" style="-fx-border-color: #707070; -fx-padding: 10px; -fx-border-radius: 5px;" text="Meine Tagliste" textFill="#707070">
+                  <Label alignment="TOP_LEFT" layoutX="536.0" layoutY="51.0" style="-fx-border-color: #707070; -fx-padding: 10px; -fx-border-radius: 5px;" text="Meine Tagliste" textFill="#707070">
                      <font>
                         <Font name="Times New Roman" size="24.0" />
                      </font>
