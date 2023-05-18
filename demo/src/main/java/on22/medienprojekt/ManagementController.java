@@ -143,7 +143,7 @@ public class ManagementController implements Initializable {
             tags.add(item);
         }
 
-        try (FileOutputStream fos = new FileOutputStream("lvFiles");
+        try (FileOutputStream fos = new FileOutputStream("tagFiles");
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
             oos.writeObject(tags);
