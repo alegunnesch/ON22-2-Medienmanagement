@@ -8,25 +8,15 @@
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="on22.medienprojekt.ManagementController">
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="on22.medienprojekt.ManagementController">
    <children>
-      <BorderPane prefHeight="735.0" prefWidth="1240.0">
-         <center>
-            <AnchorPane prefHeight="147.0" prefWidth="1240.0" style="-fx-background-color: #e3e0d6; -fx-border-color: #707070;" BorderPane.alignment="CENTER">
-               <children>
-                  <Label layoutX="478.0" layoutY="60.0" style="-fx-border-color: #707070; -fx-padding: 10px; -fx-border-radius: 5px;" text="Mein Verwaltungsbereich" textFill="#707070">
-                     <font>
-                        <Font name="Times New Roman" size="25.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-         </center>
+      <BorderPane prefHeight="742.0" prefWidth="1246.0">
          <top>
-          <ButtonBar buttonMinWidth="110.0" prefHeight="62.0" prefWidth="1242.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+          <ButtonBar buttonMinWidth="110.0" prefHeight="62.0" prefWidth="1246.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
               <buttons>
                 <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToStart" style="-fx-background-color: #ffffff;" text="Start" textFill="#a06d17" translateX="-200.0">
                      <font>
@@ -52,18 +42,34 @@
             </ButtonBar>
          </top>
          <bottom>
-            <AnchorPane prefHeight="430.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="Anchor" prefHeight="485.0" prefWidth="1246.0" BorderPane.alignment="CENTER">
                <children>
-                  <TreeView fx:id="treeView" layoutY="9.0" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="426.0" prefWidth="184.0" style="-fx-background-color: #ffffff; -fx-border-color: #707070; -fx-border-radius: 5px;" />
-                  <AnchorPane layoutY="14.0" prefHeight="430.0" prefWidth="1240.0">
+                  <AnchorPane prefHeight="486.0" prefWidth="1246.0">
                      <children>
-                        <ListView fx:id="lvImportedFiles" layoutX="192.0" layoutY="-5.0" prefHeight="359.0" prefWidth="1047.0" style="-fx-background-color: #ffffff; -fx-border-color: #707070; -fx-border-radius: 5px;" />
-                        <Button layoutX="594.0" layoutY="390.0" mnemonicParsing="false" onAction="#extractNamesFromTagFile" style="-fx-background-color: #e3e0d6; -fx-background-radius: 7px; -fx-border-color: #707070; -fx-border-radius: 5px;" text="Button" />
+                        <ListView fx:id="lvImportedFiles" layoutX="204.0" layoutY="4.0" prefHeight="427.0" prefWidth="1042.0" style="-fx-border-color: #707070; -fx-border-radius: 5px; -fx-background-color: #ffffff;" />
+                        <Button layoutX="699.0" layoutY="443.0" mnemonicParsing="false" onAction="#extractNamesFromTagFile" style="-fx-background-color: #e3e0d6; -fx-background-radius: 7px; -fx-border-color: #707070; -fx-border-radius: 5px;" text="Button" textFill="#707070">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Button>
+                        <TreeView fx:id="treeView" layoutY="4.0" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="483.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #707070; -fx-border-radius: 5px;" />
                      </children>
                   </AnchorPane>
                </children>
             </AnchorPane>
          </bottom>
+         <center>
+            <AnchorPane prefHeight="156.0" prefWidth="1246.0" style="-fx-background-color: e3e0d6; -fx-border-color: #707070;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="481.0" layoutY="45.0" style="-fx-border-color: #707070; -fx-padding: 10px; -fx-border-radius: 5px;" text="Mein Verwaltungsbereich" textFill="#707070">
+                     <font>
+                        <Font name="Times New Roman" size="25.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="147.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+         </center>
       </BorderPane>
    </children>
    <padding>
