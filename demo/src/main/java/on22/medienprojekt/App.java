@@ -19,8 +19,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("start"), 1280, 720);
         stage. setResizable(true);
-        stage. setMaxHeight(720);
-        stage.setMaxWidth(1280);
+        stage. setMaxHeight(1080);
+        stage.setMaxWidth(1920);
         stage. setMinWidth(640);
         stage. setMinHeight(480);
         stage.setScene(scene);
